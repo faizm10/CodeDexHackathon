@@ -17,14 +17,14 @@ export default function Navbar() {
         <ul className="flex gap-8 list-none font-bold">
           <li>
             <a
-              href="#"
-              onClick={() => handleScroll('aboutus')}
+              href="/"
+              // onClick={() => handleScroll('aboutus')}
               className="hover:text-violet-600 cursor-pointer"
             >
-              About Us
+              Home
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#"
               onClick={() => handleScroll('introduction')}
@@ -32,13 +32,21 @@ export default function Navbar() {
             >
               Introduction
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="/predictor"
               className="hover:text-violet-600 cursor-pointer"
             >
               Predictor
+            </a>
+          </li>
+          <li>
+            <a
+              href="/graphs"
+              className="hover:text-violet-600 cursor-pointer"
+            >
+              Graphs
             </a>
           </li>
         </ul>

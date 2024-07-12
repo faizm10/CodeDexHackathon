@@ -9,16 +9,7 @@ const LandingPage: React.FC = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Introduction Section */}
-      {/* <Intro /> */}
-
-      {/* Predictions Section */}
-
-      {/* About Us Section */}
       <AboutUs />
-
-      {/* Footer */}
-      {/* <Footer /> */}
     </div>
   );
 };
