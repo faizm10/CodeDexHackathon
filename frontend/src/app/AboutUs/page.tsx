@@ -19,7 +19,7 @@ const teamMembers = [
       "Hello, I'm Fawaz, a second-year computer science student excited to be participating in my first virtual hackathon. With a passion for coding and innovation, I am eager to collaborate with talented individuals and tackle new challenges. I look forward to learning, growing, and making meaningful contributions to our projects.",
     image: "./images/aboutus/fawaz.webp",
     linkedin: "https://www.linkedin.com/in/fawazriz/",
-    github: "https://github.com",
+    github: "https://github.com/fawazriz",
   },
   {
     name: "Faiz Mustansar",
@@ -28,7 +28,7 @@ const teamMembers = [
       "Howdy, I'm Faiz M, heading into my second year at the University of Guelph, majoring in Computer Science with a minor in Sports & Event Management. I am currently working as an Undergraduate Research Assistant while also doing some side projects and taking four summer courses altogether! This will be my first hackathon, and I am excited to see how we will do in it!",
     image: "./images/aboutus/profilepic.webp",
     linkedin: "https://www.linkedin.com/in/faiz-mustansar-a9a435213/",
-    github: "https://github.com",
+    github: "https://github.com/faizm10",
   },
   {
     name: "Talha Naveed",
@@ -37,7 +37,7 @@ const teamMembers = [
       "Hey! My name is Talha Naveed! I'm a second year student at the University of Guelph and this will be my first hackathon that I’ll be attending. Excited to see how this goes and good luck to all!",
     image: "/images/aboutus/talha.webp",
     linkedin: "https://www.linkedin.com/in/talha-naveed-b36290292/",
-    github: "https://github.com",
+    github: "https://github.com/TalhaNaveed1",
   },
 ];
 
@@ -86,7 +86,10 @@ const TeamMemberCard: React.FC<(typeof teamMembers)[0]> = ({
 );
 
 const AboutUs: React.FC = () => (
-  <div className="bg-gradient-to-r from-purple-400 to-blue-500 min-h-screen py-16" id="aboutus">
+  <div
+    className="bg-gradient-to-r from-purple-400 to-blue-500 min-h-screen py-16"
+    id="aboutus"
+  >
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl font-bold text-center mb-8 text-white">
         About Us
