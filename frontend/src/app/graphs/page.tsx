@@ -26,15 +26,16 @@ const Graphs: React.FC = () => {
         </div>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden m-4 w-full">
           <img
-            src="/all_medals.png"
+            src="/allCanadaMedals.png"
             alt="Graph 2"
             className="w-full h-full object-cover"
           />
           <div className="p-4 text-center">
             <h2 className="text-2xl font-bold mb-2">2024 Predicted Medals</h2>
             <p className="text-gray-700">
-              This graph shows the predicted distribution of medals for the 2024
-              Paris Olympics.
+              "This graph displays the distribution of Canadian Olympic medals
+              (Gold, Silver, and Bronze) from 1900 to 2020, highlighting the
+              performance trends over time."
             </p>
           </div>
         </div>
