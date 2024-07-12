@@ -40,8 +40,8 @@ Our hackathon project aims to predict the medal winners of the 2024 Paris Olympi
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/faizm10/CodeDex-Hackathon
-   cd CodeDex-Hackathon
+   git clone https://github.com/faizm10/CodeDexHackathon
+   cd CodeDexHackathon
    ```
 2. Create and activate a virtual environment:
    ```bash
