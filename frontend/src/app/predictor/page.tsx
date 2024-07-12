@@ -10,8 +10,10 @@ const Badminton: React.FC = () => {
     womensSingles: [] as [string, number][],
     womensDoubles: [] as [string, number][],
     mixedDoubles: [] as [string, number][],
-    womenBasketball: [] as [string, number][],
+    womensBasketball: [] as [string, number][],
     mensBasketball: [] as [string, number][],
+    womensFootball: [] as [string, number][],
+    mensFootball: [] as [string, number][],
   });
 
   const handlePredictClick = () => {
@@ -215,6 +217,47 @@ const Badminton: React.FC = () => {
     const womens_ball_silver_teams = ["Japan"];
     const womens_ball_bronze_teams = ["France"];
 
+    // Men's football standings
+    const mens_football_teams = [
+      "Brazil",
+      "Spain",
+      "Mexico",
+      "Japan",
+      "Republic of Korea",
+      "New Zealand",
+      "Côte d'Ivoire",
+      "Egypt",
+      "Germany",
+      "Argentina",
+      "Romania",
+      "Australia",
+      "France",
+      "Honduras",
+      "South Africa",
+    ];
+    const mens_football_gold_teams = ["Brazil"];
+    const mens_football_silver_teams = ["Spain"];
+    const mens_football_bronze_teams = ["Mexico"];
+
+    // Women's football standings
+    const womens_football_teams = [
+      "Canada",
+      "Sweden",
+      "USA",
+      "Australia",
+      "Netherlands",
+      "Brazil",
+      "Great Britain",
+      "Japan",
+      "Zambia",
+      "People's Republic of China",
+      "Chile",
+      "New Zealand",
+    ];
+    const womens_football_gold_teams = ["Canada"];
+    const womens_football_silver_teams = ["Sweden"];
+    const womens_football_bronze_teams = ["USA"];
+
     setResults({
       mensSingles: simulateSport(
         mensSinglesTeams,
@@ -250,13 +293,25 @@ const Badminton: React.FC = () => {
         mens_ball_teams,
         mens_ball_gold_teams,
         mens_ball_silver_teams,
-        mens_ball_bronze_teams,
+        mens_ball_bronze_teams
       ),
-      womenBasketball: simulateSport(
+      womensBasketball: simulateSport(
         womens_ball_teams,
         womens_ball_gold_teams,
         womens_ball_silver_teams,
-        womens_ball_bronze_teams,
+        womens_ball_bronze_teams
+      ),
+      mensFootball: simulateSport(
+        mens_football_teams,
+        mens_football_gold_teams,
+        mens_football_silver_teams,
+        mens_football_bronze_teams
+      ),
+      womensFootball: simulateSport(
+        womens_football_teams,
+        womens_football_gold_teams,
+        womens_football_silver_teams,
+        womens_football_bronze_teams
       ),
     });
   };
@@ -269,7 +324,7 @@ const Badminton: React.FC = () => {
           <tr>
             <th>Rank</th>
             <th>Country</th>
-            <th>Score</th>
+            {/* <th>Score</th> */}
           </tr>
         </thead>
         <tbody>
@@ -277,7 +332,7 @@ const Badminton: React.FC = () => {
             <tr key={index} className={`standing standing-${index + 1}`}>
               <td>{index + 1}</td>
               <td>{country}</td>
-              <td>{score}</td>
+              {/* <td>{score}</td> */}
             </tr>
           ))}
         </tbody>
@@ -288,7 +343,11 @@ const Badminton: React.FC = () => {
   return (
     <div className="container">
       <h1 className="title">Olympic Prediction 2024</h1>
-      <button className="predict-button" onClick={handlePredictClick}>
+      {/* <button className="predict-button" onClick={handlePredictClick}></button> */}
+      <button
+        onClick={handlePredictClick}
+        className="bg-purple-600 text-yellow-500 px-20 py-5 rounded-xl font-sans text-xl font-semibold hover:bg-yellow-500 hover:text-purple-800 transition-colors hover:shadow-lg"
+      >
         Predict 2024 Sport Winners
       </button>
       <div className="results">
@@ -318,7 +377,15 @@ const Badminton: React.FC = () => {
         )}
         {renderTable(
           "Womens's Basketball Predicted Standings",
-          results.womenBasketball
+          results.womensBasketball
+        )}
+        {renderTable(
+          "Men's Football Predicted Standings",
+          results.mensFootball
+        )}
+        {renderTable(
+          "Womens's Football Predicted Standings",
+          results.womensFootball
         )}
       </div>
     </div>
@@ -326,56 +393,3 @@ const Badminton: React.FC = () => {
 };
 
 export default Badminton;
-
-// "use client";
-// import React, { useEffect, useState } from "react";
-// import {
-//   Card,
-//   CardHeader,
-//   CardBody,
-//   CardFooter,
-//   Image,
-//   Button,
-//   Divider,
-//   Link,
-// } from "@nextui-org/react";
-// // import axios from "axios";
-
-// function Predictor() {
-
-//   const [message, setMessage] = useState("Loading...")
-
-//   useEffect(() => {
-//     fetch('http://127.0.0.1:8080/api/data')
-//       .then((response) =>
-//         response.json()
-//       )
-//       .then(data => {
-//         setMessage(data.message)
-//         console.log(data)
-//       })
-//       .catch(error => {
-//         console.error('Error fetching data:', error);
-//       });
-//   }, []);
-
-//   return (
-//     <div className="bg-gradient-to-r from-purple-400 to-blue-500 min-h-screen py-16 flex flex-col items-center justify-center">
-//       {/* {message} */}
-//       <h1 className=" font-sans font-bold text-6xl mb-20 mt-20"><em>We predict that...</em></h1>
-//       <img src="/images/predictor/arrow1.png" alt="Arrow" className="mt-10"/>
-//       <Card className="bg-black text-white rounded-xl shadow-xl">
-//         <CardHeader>
-//           <p className="font-semibold font-sans text-4xl">⚽<em>For Football...</em>⚽</p>
-//         </CardHeader>
-//         <CardBody>
-//           <p className="bg-yellow-600 text-center rounded mb-4 text-2xl px-10">Hello</p>
-//           <p className="bg-slate-300 text-center rounded mb-4 text-2xl px-10">Hello</p>
-//           <p className="bg-yellow-900 text-center rounded mb-4 text-2xl px-20">Hello</p>
-//         </CardBody>
-//       </Card>
-//     </div>
-//   );
-// };
-
-// export default Predictor;
