@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#heroButton {
+  border-radius: 12px;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+#heroButton:hover {
+  box-shadow: 0 1em 1em -0.4em yellow;
+  transform: translateY(-5px);
+}
+
