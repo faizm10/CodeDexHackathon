@@ -10,7 +10,7 @@ import {
   Divider,
   Link,
 } from "@nextui-org/react";
-import axios from "axios";
+// import axios from "axios";
 
 
 function Predictor() {
@@ -32,8 +32,20 @@ function Predictor() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-purple-400 to-blue-500 min-h-screen py-16 flex items-center justify-center">
-      {message}
+    <div className="bg-gradient-to-r from-purple-400 to-blue-500 min-h-screen py-16 flex flex-col items-center justify-center">
+      {/* {message} */}
+      <h1 className=" font-sans font-bold text-6xl mb-20 mt-20"><em>We predict that...</em></h1>
+      <img src="/images/predictor/arrow1.png" alt="Arrow" className="mt-10"/>
+      <Card className="bg-black text-white rounded-xl shadow-xl">
+        <CardHeader>
+          <p className="font-semibold font-sans text-4xl">⚽<em>For Football...</em>⚽</p>
+        </CardHeader>
+        <CardBody>
+          <p className="bg-yellow-600 text-center rounded mb-4 text-2xl px-10">Hello</p>
+          <p className="bg-slate-300 text-center rounded mb-4 text-2xl px-10">Hello</p>
+          <p className="bg-yellow-900 text-center rounded mb-4 text-2xl px-20">Hello</p>
+        </CardBody>
+      </Card>
     </div>
   );
 };
