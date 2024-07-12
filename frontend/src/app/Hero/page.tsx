@@ -22,6 +22,7 @@ const Hero: React.FC = () => {
         </button>
       </a>
       <img src="/images/hero/olympicbg.png" alt="Olympic Background" />
+
     </div>
   );
 };

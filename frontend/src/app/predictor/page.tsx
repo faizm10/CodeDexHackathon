@@ -319,7 +319,7 @@ const Badminton: React.FC = () => {
   const renderTable = (title: string, data: [string, number][]) => (
     <div className="results-container">
       <h2>{title}</h2>
-      <table className="standings-table">
+      <table className="standings-table font-sans">
         <thead>
           <tr>
             <th>Rank</th>
