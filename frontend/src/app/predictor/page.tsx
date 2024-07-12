@@ -341,8 +341,8 @@ const Badminton: React.FC = () => {
   );
 
   return (
-    <div className="container" id="output">
-      <h1 className="title">Olympic Prediction 2024</h1>
+    <div className="container bg-gradient-to-r from-purple-400 to-blue-500" id="output">
+      <h1 className="title font-bold text-white">Olympic Prediction 2024</h1>
       {/* <button className="predict-button" onClick={handlePredictClick}></button> */}
       <button
         onClick={handlePredictClick}

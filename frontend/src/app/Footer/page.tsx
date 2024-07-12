@@ -3,7 +3,8 @@ import { FaGithub, FaHeart } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-r from-purple-500 to-blue-500 py-8 mt-10">
+    // <footer className="bg-gradient-to-r from-purple-500 to-blue-500 py-8 mt-10">
+    <footer className="py-8 mt-10">
       <div className="container mx-auto text-center text-black font-sans p-5 rounded-lg bg-gradient-to-b from-gray-200 to-gray-300">
         <p className="mb-4 text-2xl flex justify-center items-center font-mono">
           Made with <FaHeart className="mx-2 text-red-500" /> by The Mighty Gryphons!!

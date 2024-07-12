@@ -4,7 +4,7 @@
   /* min-height: 150vh;  Ensures the container takes up at least the full viewport height */
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Adds a gradient background */
+  /* background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); Adds a gradient background */
 }
 
 #output {
@@ -15,7 +15,7 @@
 .title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #333;
+  /* color: #; */
 }
 
 .predict-button {
