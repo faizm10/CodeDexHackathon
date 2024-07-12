@@ -10,17 +10,30 @@ const Hero: React.FC = () => {
       >
         <em>Welcome to the 2024 Paris Olympics Predictor!</em>
       </h1>
-      <a href="/predictor">
+      <div className="flex gap-x-10 mb-10">
+        <a href="/predictor">
+          <button
+            id="heroButton"
+            className="bg-purple-600 text-yellow-500 px-20 py-5 rounded-xl font-sans text-xl font-semibold hover:bg-yellow-500 hover:text-purple-800 transition-colors hover:shadow-lg"
+          >
+            Predictions
+          </button>
+        </a>
+        <a href="/graphs">
+          <button
+            id="heroButton"
+            className="bg-purple-600 text-yellow-500 px-20 py-5 rounded-xl font-sans text-xl font-semibold hover:bg-yellow-500 hover:text-purple-800 transition-colors hover:shadow-lg"
+          >
+            Graph Visuals
+          </button>
+        </a>
+      </div>
 
-        <button
-          id="heroButton"
-          className="bg-purple-600 text-yellow-500 px-20 py-5 rounded-xl font-sans text-xl font-semibold hover:bg-yellow-500 hover:text-purple-800 transition-colors hover:shadow-lg"
-        >
-          Enter Predictor Now!
-        </button>
-
-      </a>
-      <img src="/images/hero/olympicbg.png" alt="Olympic Background" />
+      <img
+        src="/images/hero/olympicbg.png"
+        alt="Olympic Background"
+        className="w-full h-auto object-cover"
+      />
     </div>
   );
 };
