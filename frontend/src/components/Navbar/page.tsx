@@ -8,13 +8,13 @@ export default function Navbar() {
     };
   
     return (
-      <div className="flex h-20 bg-white text-Y shadow-lg gap-4 justify-around items-center text-black">
+      <div className="flex flex-col md:flex-row h-1/5 bg-white text-Y shadow-lg gap-4 justify-around items-center text-black">
         <img
           alt="logo"
-          className="h-4/5"
+          className="h-16"
           src="https://1000logos.net/wp-content/uploads/2021/03/Olympics-logo.png"
         />
-        <ul className="flex gap-8 list-none font-bold">
+        <ul className="flex flex-col md:flex-row gap-8 list-none font-bold items-center pb-2 md:pb-0">
           <li>
             <a
               href="/"
@@ -53,4 +53,3 @@ export default function Navbar() {
       </div>
     );
   }
-  
