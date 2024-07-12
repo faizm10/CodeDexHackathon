@@ -1,4 +1,4 @@
-#!/Users/faizmustansar/Desktop/CodeDex-Hackathon/backend/venv/bin/python3.12
+#!/Users/faizmustansar/Desktop/CodeDexHackathon/backend/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
