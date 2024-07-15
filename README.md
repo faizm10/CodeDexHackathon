@@ -1,5 +1,7 @@
 # Hackathon Project: OlympiPredict
 
+Quick Update: Won 2nd Place for Best Paris 2024 Olympics Category
+
 ## Team Members
 - **Faiz Mustansar**: Lead
 - **Fawaz Rizwan**: Developer
