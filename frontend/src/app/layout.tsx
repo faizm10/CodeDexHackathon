@@ -7,7 +7,7 @@ import Footer from "./Footer/page";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "OlympiPredict",
+  title: "OlympicPredict",
   description: "Hackathon Project",
 };
 

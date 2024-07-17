@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
         className="text-yellow-500 font-sans font-bold text-6xl mb-20 mt-20 p-5"
         style={{ textShadow: "2px 2px 4px yellow" }}
       >
-        <em>Welcome to OlympiPredict!</em>
+        <em>Welcome to OlympicPredict!</em>
       </h1>
       <h2 className="text-white font-sans font-medium text-4xl mb-10">
         Hackathon Project for CodeDex

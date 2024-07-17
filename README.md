@@ -1,6 +1,6 @@
 # Hackathon Project: OlympiPredict
 
-Quick Update: Won 2nd Place for Best Paris 2024 Olympics Category
+Quick Update: Won 2nd Place for Best Paris 2024 Olympics Category!!
 
 ## Team Members
 - **Faiz Mustansar**: Lead
@@ -27,13 +27,15 @@ Our hackathon project aims to predict the medal winners of the 2024 Paris Olympi
 - **Feature Engineering**: Create new features such as medal weight, total teams, and top winners for each sports
 
 ### 3. Data Analysis and Visualization
-- **Tools**: Python, Pandas
+- **Tools**: Python, Pandas and R Programming
 
 ### 4. 2024 Predictions
 - **Method**: Use 2021 sports-specific top teams and participating countries data and Apply algorithms to predict 2024 results based on performance and other factors.
-- **Future Improvements**
+## Future Improvements**
 - **Efficiency**: Develop methods to efficiently gather data on participating teams.
 - **Algorithm Enhancement:** Enhance prediction algorithms with more robust datasets.
+- **Responsiveness:** Improve the responsiveness
+
 ## Installation
 1. Clone the repository:
    ```bash
