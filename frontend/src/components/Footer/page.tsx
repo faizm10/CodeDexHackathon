@@ -3,7 +3,7 @@ import { FaGithub, FaHeart } from "react-icons/fa";
 
 const page = () => {
   return (
-    <div className="mt-10 text-white text-center">
+    <div className="mt-10 text-black text-center p-4">
     <p className="mb-2">
       Made with <FaHeart className="inline text-red-500" /> by The Mighty
       Gryphons
