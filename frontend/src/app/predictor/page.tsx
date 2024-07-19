@@ -342,8 +342,13 @@ const Badminton: React.FC = () => {
   );
 
   return (
-    <div className="container bg-gradient-to-r from-purple-400 to-blue-500" id="output">
-      <h1 className="title font-bold text-white font-sans">Olympic Prediction 2024</h1>
+    <div
+      className="container bg-gradient-to-r from-purple-400 to-blue-500"
+      id="output"
+    >
+      <h1 className="title font-bold text-white font-sans">
+        Olympic Prediction 2024
+      </h1>
       {/* <button className="predict-button" onClick={handlePredictClick}></button> */}
       <button
         onClick={handlePredictClick}
@@ -388,22 +393,6 @@ const Badminton: React.FC = () => {
           "Womens's Football Predicted Standings",
           results.womensFootball
         )}
-      </div>
-      <div className="mt-10 text-white text-center">
-        <p className="mb-2">
-          Made with <FaHeart className="inline text-red-500" /> by The Mighty
-          Gryphons
-        </p>
-        <p>
-          <a
-            href="https://github.com/faizm10/CodeDexHackathon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-300 underline"
-          >
-            <FaGithub className="inline mr-1" /> GitHub Repository
-          </a>
-        </p>
       </div>
     </div>
   );
