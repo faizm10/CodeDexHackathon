@@ -41,27 +41,73 @@ def simulate_sport(sport_data, gold_teams, silver_teams, bronze_teams, num_simul
     
     return final_standings
 
-def main():
+
+def readPlayers(sportName, gender):
     # Men's singles badminton standings
-    mens_singles_teams = [
-        'Viktor Axelsen (DEN)', 'Long Chen (CHN)', 'Anthony Sinisuka Ginting (INA)', 
-        'Kevin Cordon (GUA)', 'Anders Antonsen (DEN)', 'Tien Chen Chou (TPE)', 
-        'Kwanghee Heo (KOR)', 'Yuqi Shi (CHN)', 'Mark Caljouw (NED)', 
-        'Jonatan Christie (INA)', 'Zii Jia Lee (MAS)', 'Toby Penty (GBR)', 
-        'Kanta Tsuneyama (JPN)', 'Tzu-Wei Wang (TPE)', 'Matthew Abela (MLT)', 
-        'Pablo Abian (ESP)', 'Sai Praneeth Bhamidipati (IND)', 'Felix Burestedt (SWE)', 
-        'Ygor Coelho (BRA)', 'Ade Resky Dwicahyo (AZE)', 'Niluka Karunaratne (SRI)', 
-        'Kalle Koljonen (FIN)', 'Gergely Krausz (HUN)', 'Timothy Lam (USA)', 
-        'Brice Leverdez (FRA)', 'Kean Yew Loh (SGP)', 'Aram Mahmoud (XXB)', 
-        'Kento Momota (JPN)', 'Lino Munoz (MEX)', 'Raul Must (EST)', 
-        'Ka Long Angus Ng (HKG)', 'Nhat Nguyen (IRL)', 'Tien Minh Nguyen (VIE)', 
-        'Georges Julien Paul (MRI)', 'Artem Pochtarov (UKR)', 'Kai Schaefer (GER)', 
-        'Sergey Sirant (ROC)', 'Kantaphon Wangcharoen (THA)', 'Luka Wraber (AUT)', 
-        'Brian Yang (CAN)', 'Misha Zilberman (ISR)'
-    ]
-    mens_singles_gold_teams = ['Viktor Axelsen (DEN)']
-    mens_singles_silver_teams = ['Long Chen (CHN)']
-    mens_singles_bronze_teams = ['Anthony Sinisuka Ginting (INA)']
+
+    # Load the provided CSV file
+    file_path = 'files/athletes.csv'
+
+    # Read the CSV file into a DataFrame
+    df = pd.read_csv(file_path)
+
+    # Filter the DataFrame for male athletes in the badminton discipline
+    badminton_mens_singles_df = df[(df['gender'] == gender) & (df['discipline'] == sportName)]
+
+    # Create the list in the required format
+    mens_singles_teams = [f"{row['name']} ({row['country_code']})" for _, row in badminton_mens_singles_df.iterrows()]
+
+    return mens_singles_teams
+
+
+def teamMedals(medalType, sport, event):
+    # Load the provided CSV file for medals
+    medals_file_path = 'files/medals.csv'
+
+    # Read the CSV file into a DataFrame
+    medals_df = pd.read_csv(medals_file_path)
+
+    # Filter the DataFrame for the specified medal type, sport, and event
+    filtered_df = medals_df[(medals_df['medal_type'] == medalType) & 
+                            (medals_df['discipline'] == sport) & 
+                            (medals_df['event'].str.contains(event))]
+
+    # Create the list in the required format
+    team_medals_list = [f"{row['athlete_name']} ({row['country_code']})" for _, row in filtered_df.iterrows()]
+
+    # print(f"{medalType.upper()} TEAMS FOR {sport.upper()} IN {event.upper()}")
+    # print(team_medals_list)
+
+    return team_medals_list
+
+
+def readDoubleMedal(medal, sport, event):
+    # Load the provided CSV file for medals
+    medals_file_path = 'files/medals.csv'  # Make sure the file path is correct
+
+    # Read the CSV file into a DataFrame
+    medals_df = pd.read_csv(medals_file_path)
+
+    # Filter the DataFrame for gold medal winners in men's doubles badminton
+    mens_doubles_winners_df = medals_df[(medals_df['medal_type'] == medal) & 
+                                        (medals_df['discipline'] == sport) & 
+                                        (medals_df['event'].str.contains(event, na=False))]
+
+    # Create the list in the required format
+    mens_doubles_teams = [f"{row['athlete_name']} ({row['country_code']})" for _, row in mens_doubles_winners_df.iterrows()]
+
+    # Print the list to verify
+
+    return mens_doubles_teams
+
+
+def main():
+
+    #Men's single badminton teams information
+    mens_singles_teams = readPlayers("Badminton", "Male")
+    mens_singles_gold_teams = teamMedals("Gold Medal", "Badminton", "Men's Singles")
+    mens_singles_silver_teams = teamMedals("Silver Medal", "Badminton", "Men's Singles")
+    mens_singles_bronze_teams = teamMedals("Bronze Medal", "Badminton", "Men's Singles")
 
     # Men's doubles badminton standings
     mens_doubles_teams = [
@@ -75,32 +121,18 @@ def main():
         'Sean Vendy / Ben Lane (GBR)', 'Anuoluwapo Juwon Opeyori / Godwin Olofua (NGR)', 
         'Satwiksairaj Rankireddy / Chirag Shetty (IND)'
     ]
-    mens_doubles_gold_teams = ['Yang Lee / Chi-Lin Wang (TPE)']
-    mens_doubles_silver_teams = ['Yu Chen Liu / Jun Hui Li (CHN)']
-    mens_doubles_bronze_teams = ['Wooi Yik Soh / Aaron Chia (MAS)']
+    mens_doubles_gold_teams = readDoubleMedal("Gold Medal", "Badminton", "Men's Doubles")
+    print(mens_doubles_gold_teams)
+
+    mens_doubles_silver_teams = readDoubleMedal("Silver Medal", "Badminton", "Men's Doubles")
+    mens_doubles_bronze_teams = readDoubleMedal("Bronze Medal", "Badminton", "Men's Doubles")
 
     
     # Women's singles badminton standings
-    womens_singles_teams = [
-        'Yu Fei Chen (CHN)', 'Tzu Ying Tai (TPE)', 'Pusarla Venkata Sindhu (IND)', 
-        'Bingjiao He (CHN)', 'Se-Young An (KOR)', 'Ratchanok Intanon (THA)', 
-        'Nozomi Okuhara (JPN)', 'Akane Yamaguchi (JPN)', 'Mia Blichfeldt (DEN)', 
-        'Gaeun Kim (KOR)', 'Michelle Li (CAN)', 'Busanan Ongbamrungphan (THA)', 
-        'Gregoria Mariska Tunjung (INA)', 'Fathimath Nabaaha Abdul Razzaq (MDV)', 
-        'Dorcas Ajoke Adesokan (NGR)', 'Soraya Aghaeihajiagha (IRI)', 
-        'Clara Azurmendi Moreno (ESP)', 'Soniia Cheah (MAS)', 'Hsuan-Yu Wendy Chen (AUS)', 
-        'Ngan Yi Cheung (HKG)', 'Haramara Gaitan (MEX)', 'Kirsty Gilmour (GBR)', 
-        'Doha Hany (EGY)', 'Sabrina Jaquet (SUI)', 'Evgeniya Kosetskaya (ROC)', 
-        'Kristin Kuuba (EST)', 'Yvonne Li (GER)', 'Daniela Macias (PER)', 
-        'Thuy Linh Nguyen (VIE)', 'Ksenia Polikarpova (ISR)', 'Xuefei Qi (FRA)', 
-        'Martina Repiska (SVK)', 'Mahoor Shahzad (PAK)', 'Fabiana Da Silva (BRA)', 
-        'Nikte Alejandra Sotomayor (GUA)', 'Lianne Tan (BEL)', 'Thuzar Thet Htar (MYA)', 
-        'Maria Ulitina (UKR)', 'Jia Min Yeo (SGP)', 'Neslihan Yigit (TUR)', 
-        'Linda Zetchiri (BUL)', 'Beiwen Zhang (USA)', 'Laura Sarosi (HUN)'
-    ]
-    womens_singles_gold_teams = ['Yu Fei Chen (CHN)']
-    womens_singles_silver_teams = ['Tzu Ying Tai (TPE)']
-    womens_singles_bronze_teams = ['Pusarla Venkata Sindhu (IND)']
+    womens_singles_teams = readPlayers("Badminton", "Female")
+    womens_singles_gold_teams = teamMedals("Gold Medal", "Badminton", "Women's Singles")
+    womens_singles_silver_teams = teamMedals("Silver Medal", "Badminton", "Women's Singles")
+    womens_singles_bronze_teams = teamMedals("Bronze Medal", "Badminton", "Women's Singles")
 
     # Women's doubles badminton standings
     womens_doubles_teams = [
