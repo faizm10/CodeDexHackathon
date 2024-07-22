@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
       <h2 className="text-white font-sans font-medium text-4xl mb-10">
         Hackathon Project for CodeDex
       </h2>
-      <div className="flex gap-x-10 mb-10">
+      <div className="flex flex-col sm:flex-row gap-x-10 gap-y-5 mb-10">
         <a href="/predictor">
           <button
             id="heroButton"
