@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { simulateSport } from "./simulation";
+import ResultsData from "@/components/DataComponents/resultsData";
 import "./styles.css";
 import { FaGithub, FaHeart } from "react-icons/fa";
 
@@ -393,6 +394,11 @@ const Badminton: React.FC = () => {
           "Womens's Football Predicted Standings",
           results.womensFootball
         )}
+      </div>
+
+      <div>
+        <h1>Badminton Simulation</h1>
+        <ResultsData />
       </div>
     </div>
   );

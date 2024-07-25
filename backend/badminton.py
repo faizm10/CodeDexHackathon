@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def simulate_sport(sport_data, gold_teams, silver_teams, bronze_teams, num_simulations=10):
     country_performance = {country: 0 for country in sport_data}
     
@@ -100,8 +101,7 @@ def readDoubleMedal(medal, sport, event):
 
     return mens_doubles_teams
 
-
-def main():
+def badminton_simulate():
 
     #Men's single badminton teams information
     mens_singles_teams = readPlayers("Badminton", "Male")
@@ -181,26 +181,36 @@ def main():
     # Run simulation for mixed doubles badminton
     mixed_doubles_results = simulate_sport(mixed_doubles_teams, mixed_doubles_gold_teams, mixed_doubles_silver_teams, mixed_doubles_bronze_teams)
     # Display the results
-    print("Men's Singles Badminton Predicted Standings:")
-    for i, (country, score) in enumerate(mens_singles_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("Men's Singles Badminton Predicted Standings:")
+    # for i, (country, score) in enumerate(mens_singles_results):
+    #     print(f"{i+1}. {country} with score {score}")
 
-    print("\nMen's Doubles Badminton Predicted Standings:")
-    for i, (country, score) in enumerate(mens_doubles_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("\nMen's Doubles Badminton Predicted Standings:")
+    # for i, (country, score) in enumerate(mens_doubles_results):
+    #     print(f"{i+1}. {country} with score {score}")
 
-    print("Women's Singles Badminton Predicted Standings:")
-    for i, (country, score) in enumerate(womens_singles_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("Women's Singles Badminton Predicted Standings:")
+    # for i, (country, score) in enumerate(womens_singles_results):
+    #     print(f"{i+1}. {country} with score {score}")
 
-    print("\nWomen's Doubles Badminton Predicted Standings:")
-    for i, (country, score) in enumerate(womens_doubles_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("\nWomen's Doubles Badminton Predicted Standings:")
+    # for i, (country, score) in enumerate(womens_doubles_results):
+    #     print(f"{i+1}. {country} with score {score}")
         
-    print("Mixed Doubles Badminton Predicted Standings:")
-    for i, (country, score) in enumerate(mixed_doubles_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("Mixed Doubles Badminton Predicted Standings:")
+    # for i, (country, score) in enumerate(mixed_doubles_results):
+    #     print(f"{i+1}. {country} with score {score}")
+    
+    results = {
+        "mens_singles_results": mens_singles_results,
+        "mens_doubles_results": mens_doubles_results,
+        "womens_singles_results": womens_singles_results,
+        "womens_doubles_results": womens_doubles_results,
+        "mixed_doubles_results": mixed_doubles_results
+    }
+        
+    return results
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     badminton_simulate() 

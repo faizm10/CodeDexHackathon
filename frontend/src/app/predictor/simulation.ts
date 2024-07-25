@@ -29,6 +29,7 @@ export function simulateSport(sportData: string[], goldTeams: string[], silverTe
         performanceMap.forEach((entry, i) => {
             countryPerformance[entry.country] += (sportData.length - i);
         });
+        
     }
 
     return Object.entries(countryPerformance).sort((a, b) => b[1] - a[1]);

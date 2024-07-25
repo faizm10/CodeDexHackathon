@@ -41,7 +41,7 @@ def simulate_sport(sport_data, gold_teams, silver_teams, bronze_teams, num_simul
     
     return final_standings
 
-def main():
+def basketball_simulate():
     # Men's basketball standings
     mens_teams = [
         'United States of America', 'France', 'Australia', 'Slovenia', 'Italy', 'Spain', 
@@ -67,13 +67,20 @@ def main():
     womens_results = simulate_sport(womens_teams, womens_gold_teams, womens_silver_teams, womens_bronze_teams)
 
     # Display the results
-    print("Men's Basketball Predicted Standings:")
-    for i, (country, score) in enumerate(mens_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("Men's Basketball Predicted Standings:")
+    # for i, (country, score) in enumerate(mens_results):
+    #     print(f"{i+1}. {country} with score {score}")
 
-    print("\nWomen's Basketball Predicted Standings:")
-    for i, (country, score) in enumerate(womens_results):
-        print(f"{i+1}. {country} with score {score}")
+    # print("\nWomen's Basketball Predicted Standings:")
+    # for i, (country, score) in enumerate(womens_results):
+    #     print(f"{i+1}. {country} with score {score}")
+        
+    results = {
+        "mens_results": mens_results,
+        "womens_results": womens_results
+    }
+    
+    return results
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     basketball_simulate()
