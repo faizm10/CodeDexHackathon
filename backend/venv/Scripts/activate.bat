@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\navee\OneDrive\Desktop\Computer Science\codedex\CodeDex-Hackathon\CodeDexHackathon\backend\venv
+set VIRTUAL_ENV=C:\Users\navee\Projects\CodeDexHackathon\backend\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

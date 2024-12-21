@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\navee\OneDrive\Desktop\Computer Science\codedex\CodeDex-Hackathon\CodeDexHackathon\backend\venv"
+VIRTUAL_ENV="C:\Users\navee\Projects\CodeDexHackathon\backend\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const flaskBackendUrl = 'http://localhost:5000/results';
+    const flaskBackendUrl = 'https://ponttnop.pythonanywhere.com/results';
     const response = await axios.get(flaskBackendUrl);
     res.status(200).json(response.data);
   } catch (error) {

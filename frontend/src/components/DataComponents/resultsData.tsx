@@ -5,7 +5,7 @@ import axios from "axios";
 
 type Result = [string, number];
 
-interface ApiResponse {
+export interface ApiResponse {
   badminton: {
     mens_singles_results: Result[];
     mens_doubles_results: Result[];
@@ -23,7 +23,7 @@ interface ApiResponse {
   };
 }
 
-const ResultsData = () => {
+const useResultsData = () => {
   const [data, setData] = useState<ApiResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,38 +41,7 @@ const ResultsData = () => {
     fetchData();
   }, []);
 
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-      <h2>Badminton Mens Singles Results</h2>
-      <pre>{JSON.stringify(data.badminton.mens_singles_results, null, 2)}</pre>
-      {/* <h2>Badminton Men's Doubles Results</h2>
-      <pre>{JSON.stringify(data.badminton.mens_doubles_results, null, 2)}</pre>
-      <h2>Badminton Women's Singles Results</h2>
-      <pre>{JSON.stringify(data.badminton.womens_singles_results, null, 2)}</pre>
-      <h2>Badminton Women's Doubles Results</h2>
-      <pre>{JSON.stringify(data.badminton.womens_doubles_results, null, 2)}</pre>
-      <h2>Badminton Mixed Doubles Results</h2>
-      <pre>{JSON.stringify(data.badminton.mixed_doubles_results, null, 2)}</pre> */}
-
-      <h2>Basketball Mens Results</h2>
-      <pre>{JSON.stringify(data.basketball.mens_results, null, 2)}</pre>
-      {/* <h2>Basketball Women's Results</h2>
-      <pre>{JSON.stringify(data.basketball.womens_results, null, 2)}</pre> */}
-
-      <h2>Football Mens Results</h2>
-      <pre>{JSON.stringify(data.football.mens_results, null, 2)}</pre>
-      {/* <h2>Football Women's Results</h2>
-      <pre>{JSON.stringify(data.football.womens_results, null, 2)}</pre> */}
-    </div>
-  );
+  return { data, error };
 };
 
-export default ResultsData;
+export default useResultsData;
