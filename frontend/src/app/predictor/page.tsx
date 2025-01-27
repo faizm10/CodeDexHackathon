@@ -3,6 +3,17 @@
 import React from "react";
 import useResultsData, { ApiResponse } from "@/components/DataComponents/resultsData";
 import "./styles.css";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { Progress } from "@/components/ui/progress";
 
 const Badminton: React.FC = () => {
   const { data, error } = useResultsData();
@@ -12,28 +23,28 @@ const Badminton: React.FC = () => {
   }
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="container">Loading....</div>;
   }
 
   const renderTable = (title: string, results: [string, number][]) => (
     <div className="results-container">
       <h2>{title}</h2>
-      <table className="standings-table font-sans">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Country</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table className="standings-table font-sans">
+        <TableHeader>
+          <TableRow>
+            <TableHead>Rank</TableHead>
+            <TableHead>Country</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {results.map(([country, score], index) => (
-            <tr key={index} className={`standing standing-${index + 1}`}>
-              <td>{index + 1}</td>
-              <td>{country}</td>
-            </tr>
+            <TableRow key={index} className={`standing standing-${index + 1}`}>
+              <TableCell>{index + 1}</TableCell>
+              <TableCell>{country}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 
